@@ -8,7 +8,5 @@ spring:
           default-label: master
           uri: https://github.com/matiassanroman/microservicios.git
           search-paths: config-data
-          username: ${GIT_USER}
-          password: ${GIT_PASSWORD}
   application:
     name: config-service
