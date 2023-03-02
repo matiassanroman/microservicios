@@ -1,5 +1,7 @@
 spring:
   application:
     name: car-service
-  config:
-    import: configserver:http://localhost:8085
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:8085
