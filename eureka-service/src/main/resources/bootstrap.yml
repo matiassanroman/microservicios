@@ -1,7 +1,8 @@
 spring:
   application:
-    name: user-service
+    name: eureka-service
   cloud:
     config:
       enable: true
       uri: http://localhost:8080
+
