@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -36,7 +35,7 @@ public class UserService {
     //Metodo con Rest Template
     public UserCar getCarsByUserId(Long idUser){
         User user = getUserById(idUser);
-        List<Car> listCar = restTemplate.getForObject("http://localhost:8082/car/getcarsbyuserid/" + idUser, List.class);
+        List<Car> listCar = restTemplate.getForObject("http://car-service/car/getcarsbyuserid/" + idUser, List.class);
         return new UserCar(user,listCar);
     }
 
