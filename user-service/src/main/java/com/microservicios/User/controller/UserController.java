@@ -4,7 +4,9 @@ import com.microservicios.User.entity.User;
 import com.microservicios.User.model.Car;
 import com.microservicios.User.model.UserCar;
 import com.microservicios.User.service.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,11 +42,16 @@ public class UserController {
         return ResponseEntity.ok(userCar);
     }
 
+    @CircuitBreaker(name = "carCB", fallbackMethod = "fallbackSaveCar")
     @PostMapping("/savecar/{userId}")
     public ResponseEntity<Car> saveCar(@PathVariable("userId") Long userId, @RequestBody Car car){
         if(userService.getUserById(userId) == null)
             return ResponseEntity.notFound().build();
         Car carNew = userService.saveCar(userId,car);
         return ResponseEntity.ok(carNew);
+    }
+    
+    private ResponseEntity<Car> fallbackSaveCar(@PathVariable("userId") Long userId, @RequestBody Car car, RuntimeException e){
+        return ResponseEntity("Por favor contactarse con el admin", HttpStatus.OK);
     }
 }
