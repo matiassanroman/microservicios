@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/car-service/Car.iml" filepath="$PROJECT_DIR$/car-service/Car.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MicroServicio.iml" filepath="$PROJECT_DIR$/.idea/MicroServicio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/User.iml" filepath="$PROJECT_DIR$/user-service/User.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway-service.iml" />
+    </modules>
+  </component>
+</project>
