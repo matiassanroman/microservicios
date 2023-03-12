@@ -50,8 +50,8 @@ public class UserController {
         Car carNew = userService.saveCar(userId,car);
         return ResponseEntity.ok(carNew);
     }
-    
+
     private ResponseEntity<Car> fallbackSaveCar(@PathVariable("userId") Long userId, @RequestBody Car car, RuntimeException e){
-        return ResponseEntity("Por favor contactarse con el admin", HttpStatus.OK);
+        return new ResponseEntity("Por favor contactarse con el admin", HttpStatus.OK);
     }
 }
